@@ -6,6 +6,7 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
+    namespace 'eu.faircode.xlua'
     compileSdkVersion 30
 
     defaultConfig {
@@ -29,14 +30,14 @@ android {
         release {
             shrinkResources true
             minifyEnabled true
-            useProguard = true
+            //useProguard = true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
         debug {
             shrinkResources false
             minifyEnabled false
-            useProguard = false
+            //useProguard = false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
